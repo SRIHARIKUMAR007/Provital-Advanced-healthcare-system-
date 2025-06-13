@@ -32,23 +32,6 @@ A comprehensive, AI-powered healthcare platform built with Next.js, featuring te
 - **Health Records** - Secure medical record management
 
 
-📁 Project Structure
 
-\`\`\`
-provital-healthcare/
-├── app/                    # Next.js app directory
-│   ├── (pages)/           # Page components
-│   ├── api/               # API routes
-│   ├── globals.css        # Global styles
-│   └── layout.tsx         # Root layout
-├── components/            # Reusable components
-│   ├── ui/               # UI components
-│   ├── ai-assistant.tsx  # AI chat component
-│   └── navbar.tsx        # Navigation
-├── public/               # Static assets
-│   ├── images/          # Image assets
-│   └── manifest.json    # PWA manifest
-├── .github/             # GitHub workflows
-└── README.md
 \`\`\`
 
