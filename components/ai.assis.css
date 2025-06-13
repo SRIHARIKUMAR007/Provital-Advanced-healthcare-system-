@@ -1,0 +1,227 @@
+.ai-assistant {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 22rem;
+  max-width: calc(100vw - 3rem);
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 50;
+  transition: all 0.3s ease;
+  max-height: 32rem;
+}
+
+.ai-assistant-minimized {
+  height: auto;
+}
+
+.ai-assistant-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 9999px;
+  background-color: var(--primary-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  border: none;
+  cursor: pointer;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.ai-assistant-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.ai-assistant-button-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.ai-assistant-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.ai-assistant-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.ai-assistant-header-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.ai-assistant-header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ai-assistant-header-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 0.375rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ai-assistant-header-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.ai-assistant-action-icon {
+  height: 1rem;
+  width: 1rem;
+  color: white;
+}
+
+.ai-assistant-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 24rem;
+}
+
+.ai-assistant-message {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 80%;
+}
+
+.ai-assistant-message-assistant {
+  align-self: flex-start;
+}
+
+.ai-assistant-message-user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.ai-assistant-message-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: var(--primary-blue);
+  flex-shrink: 0;
+}
+
+.ai-assistant-message-content {
+  background-color: var(--light-blue);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.ai-assistant-message-user .ai-assistant-message-content {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.ai-assistant-typing {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  height: 1.5rem;
+}
+
+.ai-assistant-typing-dot {
+  height: 0.5rem;
+  width: 0.5rem;
+  background-color: var(--text-secondary);
+  border-radius: 9999px;
+  animation: typing 1.5s infinite ease-in-out;
+}
+
+.ai-assistant-typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.ai-assistant-typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.ai-assistant-typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-0.25rem);
+  }
+}
+
+.ai-assistant-form {
+  display: flex;
+  padding: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.ai-assistant-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem 0 0 0.5rem;
+  font-size: 0.875rem;
+}
+
+.ai-assistant-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+}
+
+.ai-assistant-send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ai-assistant-send:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.ai-assistant-send:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.ai-assistant-send-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+}
