@@ -1,225 +1,129 @@
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
-import { Apple, Users, BarChart3, Shield, CheckCircle, ArrowRight, Calendar, BookOpen, Utensils } from "lucide-react"
+import { Building2, Shield, Users, Activity, CheckCircle, ArrowRight, Briefcase, Heart } from "lucide-react"
 
-export default function NutritionTherapyPage() {
+export default function OccupationalHealthcarePage() {
   const features = [
     {
-      icon: Apple,
-      title: "Personalized Plans",
-      description: "Custom nutrition plans tailored to your health goals, dietary preferences, and lifestyle.",
-    },
-    {
-      icon: Users,
-      title: "Expert Nutritionists",
-      description: "Work with certified nutritionists and registered dietitians with years of experience.",
-    },
-    {
-      icon: BarChart3,
-      title: "Progress Tracking",
-      description: "Monitor your nutrition goals with detailed analytics and progress reports.",
+      icon: Building2,
+      title: "Workplace Assessments",
+      description: "Comprehensive workplace health and safety assessments to identify and mitigate risks.",
     },
     {
       icon: Shield,
-      title: "Evidence-Based",
-      description: "All recommendations are based on the latest nutritional science and research.",
+      title: "Injury Prevention",
+      description: "Proactive programs to prevent workplace injuries and promote employee safety.",
+    },
+    {
+      icon: Users,
+      title: "Employee Wellness",
+      description: "Wellness programs designed to improve employee health and productivity.",
+    },
+    {
+      icon: Activity,
+      title: "Health Monitoring",
+      description: "Regular health monitoring and surveillance for occupational health risks.",
     },
   ]
 
   const services = [
-    "Personalized Meal Planning",
-    "Nutritional Counseling",
-    "Weight Management Programs",
-    "Sports Nutrition",
-    "Medical Nutrition Therapy",
-    "Cooking Classes & Workshops",
+    "Pre-employment Health Screenings",
+    "Workplace Safety Training",
+    "Ergonomic Assessments",
+    "Occupational Health Surveillance",
+    "Return-to-Work Programs",
+    "Stress Management Workshops",
+    "Employee Assistance Programs",
+    "Health and Wellness Seminars",
   ]
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="hero-gradient section-padding">
-        <div className="container">
+      <section className="bg-gradient-to-br from-blue-50 to-green-50 py-20">
+        <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 slide-up">
+            <div className="space-y-6">
               <Badge variant="secondary" className="w-fit">
-                🍎 Nutrition Therapy Services
+                🏢 Occupational Healthcare
               </Badge>
-              <h1 className="text-4xl sm:text-5xl font-bold">Transform Your Health Through Nutrition</h1>
-              <p className="text-xl text-secondary leading-relaxed">
-                Discover the power of personalized nutrition with our certified nutritionists and dietitians. Get custom
-                meal plans, expert guidance, and ongoing support to achieve your health goals.
+              <h1 className="text-4xl sm:text-5xl font-bold">Healthy Employees, Thriving Business</h1>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Protect your workforce and boost productivity with our comprehensive occupational health services. We
+                help create safer, healthier workplaces for everyone.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/assessment">
-                  <button className="btn-primary">
-                    Get Nutrition Plan
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
+                  <Button size="lg" className="group">
+                    Get Workplace Assessment
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
                 </Link>
                 <Link href="/contact">
-                  <button className="btn-secondary">Learn More</button>
+                  <Button variant="outline" size="lg">
+                    Contact Our Team
+                  </Button>
                 </Link>
               </div>
             </div>
-            <div className="relative fade-in">
-              <img src="/images/nutrition-consultation.png" alt="Nutrition Consultation" className="hero-image" />
+            <div className="relative">
+              <img
+                src="/images/workplace-stress.png"
+                alt="Occupational Healthcare"
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="section-padding bg-light">
-        <div className="container">
-          <div className="text-center mb-16 slide-up">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Comprehensive Nutrition Support</h2>
-            <p className="text-xl text-secondary max-w-3xl mx-auto">
-              Our nutrition therapy services are designed to help you achieve optimal health through personalized
-              dietary guidance.
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Comprehensive Workplace Health Solutions</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our occupational health services are designed to protect your employees and enhance workplace
+              productivity.
             </p>
           </div>
 
-          <div className="features-grid">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div
-                key={index}
-                className="card text-center scale-hover fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="card-content">
-                  <div className="service-icon mx-auto">
-                    <feature.icon className="w-8 h-8 text-primary" />
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+                <CardHeader>
+                  <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mx-auto mb-4">
+                    <feature.icon className="h-8 w-8 text-blue-600" />
                   </div>
-                  <h3 className="card-title">{feature.title}</h3>
-                  <p className="card-description">{feature.description}</p>
-                </div>
-              </div>
+                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">{feature.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="section-padding bg-white">
-        <div className="container">
-          <div className="text-center mb-16 slide-up">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Nutrition Therapy Pricing</h2>
-            <p className="text-xl text-secondary max-w-3xl mx-auto">
-              Invest in your health with our comprehensive nutrition programs.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="card text-center">
-              <div className="card-content">
-                <h3 className="text-2xl font-bold mb-2">Initial Consultation</h3>
-                <div className="text-4xl font-bold text-primary mb-4">$79</div>
-                <p className="text-secondary mb-6">90-minute comprehensive assessment</p>
-                <ul className="text-left space-y-2 mb-6">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Complete dietary analysis
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Personalized meal plan
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Goal setting
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Nutrition education
-                  </li>
-                </ul>
-                <Link href="/booking">
-                  <button className="btn-primary w-full">Book Consultation</button>
-                </Link>
-              </div>
-            </div>
-
-            <div className="card text-center border-2 border-primary">
-              <div className="card-content">
-                <div className="bg-primary text-white px-3 py-1 rounded-full text-sm mb-4 w-fit mx-auto">
-                  Best Value
-                </div>
-                <h3 className="text-2xl font-bold mb-2">Follow-up Sessions</h3>
-                <div className="text-4xl font-bold text-primary mb-4">$59</div>
-                <p className="text-secondary mb-6">per 45-minute session</p>
-                <ul className="text-left space-y-2 mb-6">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Progress monitoring
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Plan adjustments
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Ongoing support
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Recipe suggestions
-                  </li>
-                </ul>
-                <Link href="/booking">
-                  <button className="btn-primary w-full">Schedule Follow-up</button>
-                </Link>
-              </div>
-            </div>
-
-            <div className="card text-center">
-              <div className="card-content">
-                <h3 className="text-2xl font-bold mb-2">Cooking Classes</h3>
-                <div className="text-4xl font-bold text-primary mb-4">$39</div>
-                <p className="text-secondary mb-6">per 2-hour class</p>
-                <ul className="text-left space-y-2 mb-6">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Hands-on cooking
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Healthy recipes
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Small group setting
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Take-home materials
-                  </li>
-                </ul>
-                <Link href="/booking">
-                  <button className="btn-primary w-full">Join Class</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-secondary mb-4">
-              Package deals available • Insurance may cover medical nutrition therapy
-            </p>
-            <p className="text-sm text-gray-500">HSA/FSA eligible • Group discounts for families</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Cooking Classes Section */}
-      <section className="section-padding">
-        <div className="container">
+      {/* Services Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 slide-up">
-              <h2 className="text-3xl sm:text-4xl font-bold">Cooking Classes & Workshops</h2>
-              <p className="text-xl text-secondary">
-                Learn to prepare healthy, delicious meals with our interactive cooking classes. Our expert chefs and
-                nutritionists will teach you practical skills to maintain a healthy lifestyle.
+            <div className="relative">
+              <img
+                src="/images/workplace-stress.png"
+                alt="Workplace Wellness"
+                className="w-full h-auto rounded-2xl shadow-lg"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-3xl sm:text-4xl font-bold">Our Occupational Health Services</h2>
+              <p className="text-xl text-gray-600">
+                From pre-employment screenings to ongoing wellness programs, we provide comprehensive occupational
+                health solutions tailored to your industry and workforce needs.
               </p>
               <div className="grid grid-cols-1 gap-4">
                 {services.map((service, index) => (
@@ -229,81 +133,78 @@ export default function NutritionTherapyPage() {
                   </div>
                 ))}
               </div>
-              <Link href="/assessment">
-                <button className="btn-primary">
-                  Join Cooking Class
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+              <Link href="/contact">
+                <Button className="group">
+                  Schedule Consultation
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
               </Link>
-            </div>
-            <div className="fade-in">
-              <img src="/images/nutrition-cooking.png" alt="Healthy Cooking Class" className="hero-image" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="section-padding bg-light">
-        <div className="container">
-          <div className="text-center mb-16 slide-up">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">How Nutrition Therapy Works</h2>
-            <p className="text-xl text-secondary max-w-3xl mx-auto">
-              Get personalized nutrition guidance in three simple steps.
+      {/* Benefits Section */}
+      <section className="py-20 bg-blue-600 text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Benefits for Your Organization</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              Investing in occupational health delivers measurable returns for your business and employees.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center fade-in">
-              <div className="service-icon mx-auto">
-                <Calendar className="w-8 h-8 text-primary" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mx-auto mb-4">
+                <Briefcase className="h-8 w-8 text-white" />
               </div>
-              <h3 className="card-title">1. Initial Assessment</h3>
-              <p className="card-description">
-                Complete a comprehensive nutrition assessment to understand your goals and dietary needs.
-              </p>
+              <h3 className="text-lg font-semibold mb-2">Reduced Absenteeism</h3>
+              <p className="text-blue-100">Healthier employees take fewer sick days</p>
             </div>
-            <div className="text-center fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="service-icon mx-auto">
-                <BookOpen className="w-8 h-8 text-primary" />
+            <div className="text-center">
+              <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mx-auto mb-4">
+                <Activity className="h-8 w-8 text-white" />
               </div>
-              <h3 className="card-title">2. Custom Plan</h3>
-              <p className="card-description">
-                Receive a personalized nutrition plan with meal recommendations and dietary guidelines.
-              </p>
+              <h3 className="text-lg font-semibold mb-2">Increased Productivity</h3>
+              <p className="text-blue-100">Wellness programs boost employee performance</p>
             </div>
-            <div className="text-center fade-in" style={{ animationDelay: "0.4s" }}>
-              <div className="service-icon mx-auto">
-                <Utensils className="w-8 h-8 text-primary" />
+            <div className="text-center">
+              <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mx-auto mb-4">
+                <Shield className="h-8 w-8 text-white" />
               </div>
-              <h3 className="card-title">3. Ongoing Support</h3>
-              <p className="card-description">
-                Get continuous support and plan adjustments as you progress towards your health goals.
-              </p>
+              <h3 className="text-lg font-semibold mb-2">Lower Insurance Costs</h3>
+              <p className="text-blue-100">Preventive care reduces healthcare expenses</p>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mx-auto mb-4">
+                <Heart className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Employee Satisfaction</h3>
+              <p className="text-blue-100">Show you care about employee wellbeing</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary text-white">
-        <div className="container text-center slide-up">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Start Your Nutrition Journey Today</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Take control of your health with personalized nutrition guidance from our expert team of nutritionists and
-            dietitians.
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Transform Your Workplace Health?</h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Contact us today to learn how our occupational health services can benefit your organization and employees.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/assessment">
-              <button className="btn-primary bg-white text-blue-600 hover:bg-gray-100">
-                Get Your Nutrition Plan
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </Link>
             <Link href="/contact">
-              <button className="btn-secondary border-white text-white hover:bg-white hover:text-blue-600">
-                Contact Nutritionist
-              </button>
+              <Button size="lg" className="group">
+                Request Consultation
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+            <Link href="/assessment">
+              <Button variant="outline" size="lg">
+                Workplace Assessment
+              </Button>
             </Link>
           </div>
         </div>
